@@ -42,8 +42,7 @@ var mediaConstraints = {
 
 function validate()
 {
-    if(!camera_allowed)
-    {alert("Please allow camera and mic permissions!");}
+
     return camera_allowed;
 }
 
@@ -54,6 +53,7 @@ function startCamera()
         document.getElementById("local_vid").srcObject = stream;
         camera_allowed=true;
     })
+
     .catch((e)=>{
         console.log("Error! Unable to start video! ", e);
         document.getElementById("permission_alert").style.display = "block";
